@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.BorderFactory;
 
 public class Screen {
     public Screen()
@@ -35,26 +35,13 @@ public class Screen {
 
         JTextField userExpression = new JTextField();
         gbc.gridx = 1;
-        gbc.gridwidth = 3;
+        gbc.gridwidth = 4;
 
         gbc.gridy = 0;
         gbc.gridheight = 2;
 
         gbc.fill = GridBagConstraints.BOTH;
         pane.add(userExpression, gbc);
-
-        JLabel label = new JLabel("Non-functional example");
-        label.setBackground(new Color(0xFEFEFE));
-        label.setForeground(new Color(0x333333));
-
-        gbc.gridx = 4;
-        gbc.gridwidth = 1;
-
-        gbc.gridy = 0;
-        gbc.gridheight = 2;
-
-        gbc.fill = GridBagConstraints.BOTH;
-        pane.add(label, gbc);
 
         JButton del = styledButton("Del");
         JButton multiply = styledButton("*");
@@ -125,7 +112,8 @@ public class Screen {
         button.setForeground(new Color(0x333333));
         button.setFont(new Font("Arial", Font.PLAIN, 12));
         button.setFocusPainted(false);
-        button.setBorderPainted(false);
+        button.setBorderPainted(true);
+        button.setBorder(BorderFactory.createLineBorder(new Color(0xCFCFCF)));
 
         button.setPreferredSize(new Dimension(1000, 200));
 

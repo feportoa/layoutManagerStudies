@@ -1,7 +1,12 @@
 package com.layoutManagers;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 public class Screen {
     public Screen()
@@ -16,6 +21,10 @@ public class Screen {
         pane.setSize(800, 600);
 
         pane.setLayout(grid); //new GridBagLayout()
+
+        ImageIcon icon = new ImageIcon("../../../imgs/jaca_icon.png");
+        pane.setIconImage(icon.getImage());
+        pane.getContentPane().setBackground(new Color(0xF4F4F4));
 
         JTextField userExpression = new JTextField();
         gbc.gridx = 1;

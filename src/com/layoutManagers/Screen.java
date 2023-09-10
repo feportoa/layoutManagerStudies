@@ -3,6 +3,7 @@ package com.layoutManagers;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -19,7 +20,7 @@ public class Screen {
         pane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pane.setSize(800, 600);
 
-        pane.setLayout(grid); //new GridBagLayout()
+        pane.setLayout(grid); // new GridBagLayout()
 
         ImageIcon icon = new ImageIcon("../../../imgs/jaca_icon.png");
         pane.setIconImage(icon.getImage());
@@ -37,33 +38,33 @@ public class Screen {
         gbc.fill = GridBagConstraints.BOTH;
         pane.add(userExpression, gbc);
 
-        JButton del = new JButton("Del");
+        JButton del = styledButton("Del");
 
-        JButton multiply = new JButton("*");
+        JButton multiply = styledButton("*");
 
-        JButton divide = new JButton("/");
+        JButton divide = styledButton("/");
 
-        JButton btn1 = new JButton("1");
+        JButton btn1 = styledButton("1");
 
-        JButton btn2 = new JButton("2");
+        JButton btn2 = styledButton("2");
 
-        JButton btn3 = new JButton("3");
+        JButton btn3 = styledButton("3");
 
-        JButton btn4 = new JButton("4");
+        JButton btn4 = styledButton("4");
 
-        JButton btn5 = new JButton("5");
+        JButton btn5 = styledButton("5");
 
-        JButton btn6 = new JButton("6");
+        JButton btn6 = styledButton("6");
 
-        JButton btn7 = new JButton("7");
+        JButton btn7 = styledButton("7");
 
-        JButton btn8 = new JButton("8");
+        JButton btn8 = styledButton("8");
 
-        JButton btn9 = new JButton("9");
+        JButton btn9 = styledButton("9");
 
-        JButton floatingPoint = new JButton(".");
+        JButton floatingPoint = styledButton(".");
 
-        JButton btn0 = new JButton("0");
+        JButton btn0 = styledButton("0");
 
         btnArray[0] = del;
         btnArray[1] = multiply;
@@ -82,7 +83,8 @@ public class Screen {
 
         gridParsing(pane, gbc, btnArray, 1, 3, 2, 6);
 
-        JButton res = new JButton("=");
+        JButton res = styledButton("=");
+        res.setFocusable(false);
         gbc.gridx = 4;
         gbc.gridwidth = 1;
 
@@ -92,7 +94,8 @@ public class Screen {
         gbc.fill = GridBagConstraints.BOTH;
         pane.add(res, gbc);
 
-        JButton add = new JButton("+");
+        JButton add = styledButton("+");
+        add.setFocusable(false);
         gbc.gridx = 4;
         gbc.gridwidth = 1;
 
@@ -109,6 +112,20 @@ public class Screen {
         System.out.println("Screen started");
     }
 
+    private JButton styledButton(String label)
+    {
+        JButton button = new JButton(label);
+        button.setFocusable(false);
+        button.setBackground(new Color(0xFEFEFE));
+        button.setForeground(new Color(0x333333));
+        button.setFont(new Font("Arial", Font.PLAIN, 12));
+        button.setFocusPainted(false);
+        button.setBorderPainted(false);
+
+        return button;
+    }
+
+
     private void gridParsing(JFrame frame, GridBagConstraints gbcVar, JButton[] btnArray, int startGridx, int endGridx, int startGridy, int endGridy)
     {
         int btnArrayCount = 0;
@@ -117,6 +134,7 @@ public class Screen {
             for(int j=startGridx; j <= endGridx; j++)
             {
                 if(btnArray[btnArrayCount] != null) {
+                    btnArray[btnArrayCount].setFocusable(false);
                     gbcVar.gridx = j;
                     gbcVar.gridy = i;
 

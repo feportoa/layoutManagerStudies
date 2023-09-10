@@ -5,9 +5,9 @@ import java.awt.GridBagLayout;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.ImageIcon;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class Screen {
     public Screen()

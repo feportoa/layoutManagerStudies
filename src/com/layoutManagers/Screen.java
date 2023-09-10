@@ -125,5 +125,3 @@ public class Screen {
         }
     }
 }
-
-// JFrame frame, JButton array[], int startNumberX, int endNumberX, int startNumberY, int endNumberY -> array[] must be in order (x 1-3 before y 1-3) this only configures the gridx and gridy, gridwidth and gridheight will be 1, fill will be BOTH

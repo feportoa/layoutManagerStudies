@@ -23,7 +23,8 @@ public class Screen {
         JFrame pane = new JFrame("JFrame Screen");
         pane.setResizable(false);
         pane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pane.setSize(360, 500);
+        pane.setSize(360, 480);
+        pane.setLocationRelativeTo(null);
 
         pane.setLayout(grid); // new GridBagLayout()
 

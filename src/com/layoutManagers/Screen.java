@@ -44,9 +44,9 @@ public class Screen {
         gbc.fill = GridBagConstraints.BOTH;
         pane.add(userExpression, gbc);
 
-        JButton del = styledButton("Del");
         JButton multiply = styledButton("*");
         JButton divide = styledButton("/");
+        JButton sub = styledButton("-");
         JButton btn1 = styledButton("1");
         JButton btn2 = styledButton("2");
         JButton btn3 = styledButton("3");
@@ -56,12 +56,13 @@ public class Screen {
         JButton btn7 = styledButton("7");
         JButton btn8 = styledButton("8");
         JButton btn9 = styledButton("9");
-        JButton floatingPoint = styledButton(".");
+        JButton del = styledButton("del");
         JButton btn0 = styledButton("0");
+        JButton floatingPoint = styledButton(".");
 
-        btnArray[0] = del;
-        btnArray[1] = multiply;
-        btnArray[2] = divide;
+        btnArray[0] = multiply;
+        btnArray[1] = divide;
+        btnArray[2] = sub;
         btnArray[3] = btn1;
         btnArray[4] = btn2;
         btnArray[5] = btn3;
@@ -71,8 +72,9 @@ public class Screen {
         btnArray[9] = btn7;
         btnArray[10] = btn8;
         btnArray[11] = btn9;
-        btnArray[12] = floatingPoint;
+        btnArray[12] = del;
         btnArray[13] = btn0;
+        btnArray[14] = floatingPoint;
 
         gridParsing(pane, gbc, btnArray, 1, 3, 2, 6);
 
